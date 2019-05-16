@@ -8,9 +8,12 @@
                 <div class="card">
                     <img class="card-img-top" src=".../100px180/" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <!-- см. get_the_title() -->
+                        <h5 class="card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+                        <!-- см. get_the_excerpt() -->
+                        <p class="card-text"><?php the_content('Continue...'); //the_excerpt();?></p>
+                        <!-- см. get_permalink() -->
+                        <a href="<?php the_permalink(); ?>" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
             </div>
@@ -24,6 +27,3 @@
 </div>
 
 <?php get_footer(); ?>
-
-
-
