@@ -10,8 +10,8 @@
                     <div class="card-body">
                         <!-- см. get_the_title() -->
                         <h5 class="card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-                        <!-- см. get_the_excerpt() -->
-                        <p class="card-text"><?php the_content('Continue...'); //the_excerpt();?></p>
+                        <!-- см. get_the_excerpt(). Используется для цитаты -->
+                        <p class="card-text"><?php the_excerpt(); //the_content('Continue...');?></p>
                         <!-- см. get_permalink() -->
                         <a href="<?php the_permalink(); ?>" class="btn btn-primary">Go somewhere</a>
                     </div>
