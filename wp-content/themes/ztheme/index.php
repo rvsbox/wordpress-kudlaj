@@ -15,14 +15,13 @@
                         <?php if (has_post_thumbnail()): ?>
                             <?php the_post_thumbnail('thumbnail'); ?>
                         <?php else: ?>
-                            <img src="https://picsum.photos/150/150?random=1" width="150" height="150" alt=""
+                            <img src="https://picsum.photos/150/150" width="150" height="150" alt=""
                                  class="float-left mr-3">
                         <?php endif; ?>
                         <!-- см. get_the_title() -->
                         <h5 class="card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
                         <!-- см. get_the_excerpt(). Используется для цитаты -->
                         <p class="card-text"><?php the_excerpt(); //the_content('Continue...');?></p>
-
                     </div>
 
                     <div class="card-footer">
