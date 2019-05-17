@@ -6,7 +6,11 @@
             <!-- post -->
             <div class="col-md-12">
                 <div class="card">
-                    <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+                    <?php if (has_post_thumbnail()): ?>
+                        <?php the_post_thumbnail('my-thumb'); ?>
+                    <?php else: ?>
+                        <img src="https://picsum.photos/100/50" width="100" height="50" alt="">
+                    <?php endif; ?>
                     <div class="card-body">
                         <!-- см. get_the_title() -->
                         <h5 class="card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
