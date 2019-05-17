@@ -17,3 +17,11 @@ function ztheme_scripts() {
 add_action('wp_enqueue_scripts', 'ztheme_scripts');
 
 
+// отключаем создание миниатюр файлов для указанных размеров
+/*add_filter( 'intermediate_image_sizes', 'delete_intermediate_image_sizes' );
+function delete_intermediate_image_sizes( $sizes ){
+    // размеры которые нужно удалить
+    return array_diff( $sizes, array(
+        'medium_large',
+    ) );
+}*/
