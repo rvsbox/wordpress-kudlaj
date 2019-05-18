@@ -3,7 +3,6 @@
 class Ztheme_Menu extends Walker_Nav_Menu {
 
     public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
-        echo '<pre>'. print_r($item, 1) .'</pre>'; // $item - текущий элемент меню. Вывод для примера
         if (isset($args->item_spacing) && 'discard' === $args->item_spacing) {
             $t = '';
             $n = '';
@@ -15,6 +14,8 @@ class Ztheme_Menu extends Walker_Nav_Menu {
 
         $classes = empty($item->classes) ? array() : (array)$item->classes;
         $classes[] = 'menu-item-' . $item->ID;
+        $classes[] = 'nav-item';
+        if ($item->current) $classes[] = 'active';
 
         /**
          * Filters the arguments for a single nav menu item.
@@ -113,7 +114,7 @@ class Ztheme_Menu extends Walker_Nav_Menu {
         $title = apply_filters('nav_menu_item_title', $title, $item, $args, $depth);
 
         $item_output = $args->before;
-        $item_output .= '<a' . $attributes . '>';
+        $item_output .= '<a' . $attributes . 'class="nav-link">';
         $item_output .= $args->link_before . $title . $args->link_after;
         $item_output .= '</a>';
         $item_output .= $args->after;
