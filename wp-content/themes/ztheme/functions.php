@@ -23,6 +23,10 @@ add_action('wp_enqueue_scripts', 'ztheme_scripts');
 function ztheme_setup() {
     add_theme_support('post-thumbnails');
     add_image_size('my-thumb', 100, 100);
+    register_nav_menus(array( // в wp-admin появится Appearance - Menus
+        'header_menu1' => 'Меню в шапке 1',
+        'footer_menu2' => 'Меню в футере 2',
+    ));
 }
 
 add_action('after_setup_theme', 'ztheme_setup');

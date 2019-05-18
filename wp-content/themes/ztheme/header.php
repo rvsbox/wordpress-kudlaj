@@ -19,6 +19,8 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
+    <?php wp_nav_menu(); ?>
+
     <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
