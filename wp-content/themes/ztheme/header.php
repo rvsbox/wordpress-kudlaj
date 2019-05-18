@@ -19,7 +19,14 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <?php wp_nav_menu(); ?>
+    <?php
+    wp_nav_menu(array(
+        'theme_location' => 'header_menu1',
+        //'menu' => 'Меню в футере',
+        //'container' => 'div',
+        'container_class' => 'collapse navbar-collapse',
+    ));
+    ?>
 
     <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
