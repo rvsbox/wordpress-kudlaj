@@ -20,12 +20,14 @@
     </button>
 
     <?php
-    wp_nav_menu(array(
+    wp_nav_menu( array(
         'theme_location' => 'header_menu1',
         //'menu' => 'Меню в футере',
         //'container' => 'div',
         'container_class' => 'collapse navbar-collapse',
-    ));
+        'menu_class' => 'navbar-nav mr-auto',
+        'walker' => new Ztheme_Menu,
+    ) );
     ?>
 
     <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">
