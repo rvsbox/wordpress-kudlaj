@@ -2,6 +2,10 @@
 
 require_once 'Ztheme_Menu.php';
 
+function debug($data){
+    echo '<pre>'.print_r($data, 1).'</pre>';
+}
+
 
 // подключение скриптов и стилей
 // ======================================================================
@@ -83,3 +87,13 @@ function ztheme_widgets_init() {
 }
 
 add_action('widgets_init', 'ztheme_widgets_init');
+
+
+// Customizer
+// ======================================================================
+
+function test_customize_register($wp_customize){
+
+}
+
+add_action('customize_register', 'test_customize_register');

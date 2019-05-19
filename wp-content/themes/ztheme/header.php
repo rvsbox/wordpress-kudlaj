@@ -9,6 +9,8 @@
 </head>
 <body <?php body_class(); ?>>
 
+<?php debug(get_theme_mods());?>
+
 <!-- вывод картинки в header, тольк для главной страницы  -->
 <?php if (is_front_page()): ?>
     <div class="header-image"
