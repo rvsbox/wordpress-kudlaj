@@ -35,6 +35,12 @@ function ztheme_setup() {
         'default-color' => 'ffffff', // цвет background по умолчанию
         'default-image' => get_template_directory_uri() . '/assets/images/background.png', // картинка background по умолчанию
     ));
+
+    add_theme_support('custom-header', array(
+        'default-image' => get_template_directory_uri() . '/assets/images/coffee.jpg',
+        'width' => '2000',
+        'height' => '1300',
+    ));
     add_image_size('my-thumb', 100, 100);
     register_nav_menus(array( // в wp-admin появится Appearance - Menus
         'header_menu1' => 'Меню в шапке 1',
