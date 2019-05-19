@@ -9,6 +9,10 @@
 </head>
 <body <?php body_class(); ?>>
 
+<!-- вывод картинки в header  -->
+<div class="header-image"
+     style="background: url(<?php echo get_custom_header()->url; ?>) center no-repeat; background-size: cover; height: 50vh;"></div>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <!-- проверка наличия кастомного логотипа  -->
     <?php if (has_custom_logo()): the_custom_logo(); ?>
