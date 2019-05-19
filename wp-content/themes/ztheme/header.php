@@ -23,6 +23,7 @@
         //'container' => 'div',
         'container_class' => 'collapse navbar-collapse',
         'menu_class' => 'navbar-nav mr-auto',
+        'container_id' => 'navbarSupportedContent',
         'walker' => new Ztheme_Menu,
     ) );
     ?>
