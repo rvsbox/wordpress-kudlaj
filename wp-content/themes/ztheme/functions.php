@@ -40,14 +40,6 @@ add_action('after_setup_theme', 'ztheme_setup');
 
 add_filter('navigation_markup_template', 'my_navigation_template', 10, 2);
 function my_navigation_template($template, $class) {
-    /*
-    Вид базового шаблона:
-    <nav class="navigation %1$s" role="navigation">
-        <h2 class="screen-reader-text">%2$s</h2>
-        <div class="nav-links">%3$s</div>
-    </nav>
-    */
-
     return '
     <nav class="navigation" role="navigation">
         <div class="nav-links">%3$s</div>
@@ -59,3 +51,17 @@ function my_navigation_template($template, $class) {
 the_posts_pagination(array(
     'end_size' => 2,
 ));
+
+
+// добавление sidebar. В админке WP будет добавлен раздел Appearance - Widgets
+// ======================================================================
+
+function ztheme_widgets_init() {
+    register_sidebar( array(
+       'name' => 'Сайдбар справа',
+        'id' => 'right-sidebar',
+        'description' => 'Область для виджетов в сайдбаре справа',
+    ));
+}
+
+add_action('widgets_init', 'ztheme_widgets_init');
