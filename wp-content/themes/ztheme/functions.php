@@ -25,6 +25,11 @@ add_action('wp_enqueue_scripts', 'ztheme_scripts');
 
 function ztheme_setup() {
     add_theme_support('post-thumbnails');
+    // в Customize появится раздел Site Identity для добавления логотипа
+    add_theme_support('custom-logo', array(
+        'width' => '150',
+        'hight' => '40',
+    ));
     add_image_size('my-thumb', 100, 100);
     register_nav_menus(array( // в wp-admin появится Appearance - Menus
         'header_menu1' => 'Меню в шапке 1',
