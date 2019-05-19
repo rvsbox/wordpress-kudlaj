@@ -10,14 +10,20 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
+    <!-- проверка наличия кастомного логотипа  -->
+    <?php if (has_custom_logo()): the_custom_logo(); ?>
+    <?php else: ?>
+        <!-- если кастомного логотипа нет, то выводим что ниже -->
+        <a class="navbar-brand" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
+    <?php endif; ?>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <?php
-    wp_nav_menu( array(
+    wp_nav_menu(array(
         'theme_location' => 'header_menu1',
         //'menu' => 'Меню в футере',
         //'container' => 'div',
@@ -25,7 +31,7 @@
         'menu_class' => 'navbar-nav mr-auto',
         'container_id' => 'navbarSupportedContent',
         'walker' => new Ztheme_Menu,
-    ) );
+    ));
     ?>
 
     <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">

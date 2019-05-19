@@ -28,7 +28,7 @@ function ztheme_setup() {
     // в Customize появится раздел Site Identity для добавления логотипа
     add_theme_support('custom-logo', array(
         'width' => '150',
-        'hight' => '40',
+        'height' => '40',
     ));
     add_image_size('my-thumb', 100, 100);
     register_nav_menus(array( // в wp-admin появится Appearance - Menus
