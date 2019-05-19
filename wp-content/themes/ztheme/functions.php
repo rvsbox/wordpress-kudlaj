@@ -32,8 +32,8 @@ function ztheme_setup() {
     ));
     // в Customize появится раздел разделы Colors, Background image
     add_theme_support('custom-background', array(
-        'default-color' => 'ffffff',
-        'default-image' => get_template_directory_uri() . '/assets/image/background.png',
+        'default-color' => 'ffffff', // цвет background по умолчанию
+        'default-image' => get_template_directory_uri() . '/assets/images/background.png', // картинка background по умолчанию
     ));
     add_image_size('my-thumb', 100, 100);
     register_nav_menus(array( // в wp-admin появится Appearance - Menus
