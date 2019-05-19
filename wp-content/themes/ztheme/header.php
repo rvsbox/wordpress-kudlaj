@@ -7,7 +7,7 @@
 
     <?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <!-- проверка наличия кастомного логотипа  -->
