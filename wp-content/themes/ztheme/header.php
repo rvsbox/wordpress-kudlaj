@@ -12,7 +12,7 @@
 <!-- вывод массива настроек Customize  -->
 <?php //debug(get_theme_mods());?>
 <!-- вывод определенной опции массива настроек Customize  -->
-<?php echo get_theme_mod('background_image'); ?>
+<?php //echo get_theme_mod('background_image'); ?>
 
 <!-- вывод картинки в header, тольк для главной страницы  -->
 <?php if (is_front_page()): ?>

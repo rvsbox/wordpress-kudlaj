@@ -92,8 +92,23 @@ add_action('widgets_init', 'ztheme_widgets_init');
 // Customizer
 // ======================================================================
 
-function test_customize_register($wp_customize){
-
+function ztheme_customize_register($wp_customize){
+    // добавление настройки
+    $wp_customize->add_setting('test_link_color', array(
+        'default' => '#007bff',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+    // элемент управления
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'test_link_color',
+            array(
+                'label' => 'Цвет ссылок',
+                'section' => 'colors',
+                'setting' => 'test_link_color',
+            )
+        )
+    );
 }
-
-add_action('customize_register', 'test_customize_register');
+add_action('customize_register', 'ztheme_customize_register');
