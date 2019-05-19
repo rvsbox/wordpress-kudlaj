@@ -9,9 +9,11 @@
 </head>
 <body <?php body_class(); ?>>
 
-<!-- вывод картинки в header  -->
-<div class="header-image"
-     style="background: url(<?php echo get_custom_header()->url; ?>) center no-repeat; background-size: cover; height: 50vh;"></div>
+<!-- вывод картинки в header, тольк для главной страницы  -->
+<?php if (is_front_page()): ?>
+    <div class="header-image"
+         style="background: url(<?php echo get_custom_header()->url; ?>) center no-repeat; background-size: cover; height: 50vh;"></div>
+<?php endif; ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <!-- проверка наличия кастомного логотипа  -->
