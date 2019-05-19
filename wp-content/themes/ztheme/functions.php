@@ -89,7 +89,7 @@ function ztheme_widgets_init() {
 add_action('widgets_init', 'ztheme_widgets_init');
 
 
-// Customizer
+// Customizer. Настройка установки цвета для ссылок
 // ======================================================================
 
 function ztheme_customize_register($wp_customize){
@@ -111,4 +111,26 @@ function ztheme_customize_register($wp_customize){
         )
     );
 }
+
 add_action('customize_register', 'ztheme_customize_register');
+
+
+// для того чтобы настройки применились в Customizer
+// ======================================================================
+
+function test_customize_css(){
+$test_link_color = get_theme_mod('test_link_color');
+echo <<<HEREDOC
+<style type="text/css">
+a { color: $test_link_color; }
+</style>
+HEREDOC;
+
+/**/?><!--
+    <style type="text/css">
+        a { color: <?php /*echo get_theme_mod('test_link_color'); */?>; }
+    </style>
+    --><?php
+}
+
+add_action('wp_head', 'test_customize_css');
