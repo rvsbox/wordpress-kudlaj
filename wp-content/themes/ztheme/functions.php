@@ -61,6 +61,8 @@ function ztheme_widgets_init() {
        'name' => 'Сайдбар справа',
         'id' => 'right-sidebar',
         'description' => 'Область для виджетов в сайдбаре справа',
+        //'before_widget' => '<div id="%1$s" class="widget %2$s">', // замена li, который по умолчанию, на div
+        //'after_widget' => "</div>\n", // продолжение, закрывающий тег
     ));
 }
 
