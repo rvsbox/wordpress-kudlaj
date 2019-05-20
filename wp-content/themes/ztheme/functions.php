@@ -49,8 +49,8 @@ function ztheme_setup() {
     ));
     add_image_size('my-thumb', 100, 100);
     register_nav_menus(array( // в wp-admin появится Appearance - Menus
-        'header_menu1' => 'Меню в шапке 1',
-        'footer_menu2' => 'Меню в футере 2',
+        'header_menu1' => 'Header menu 1',
+        'footer_menu2' => 'Footer menu 2',
     ));
 }
 
@@ -80,9 +80,9 @@ the_posts_pagination(array(
 
 function ztheme_widgets_init() {
     register_sidebar(array(
-        'name' => 'Сайдбар справа',
+        'name' => 'Right Sidebar',
         'id' => 'right-sidebar',
-        'description' => 'Область для виджетов в сайдбаре справа',
+        'description' => 'Area for widgets in the right sidebar',
         //'before_widget' => '<div id="%1$s" class="widget %2$s">', // замена li, который по умолчанию, на div
         //'after_widget' => "</div>\n", // продолжение, закрывающий тег
     ));
@@ -107,7 +107,7 @@ function ztheme_customize_register($wp_customize) {
             $wp_customize,
             'ztheme_link_color',
             array(
-                'label' => 'Цвет ссылок',
+                'label' => 'Link Color',
                 'section' => 'colors',
                 'setting' => 'ztheme_link_color',
             )
@@ -116,7 +116,7 @@ function ztheme_customize_register($wp_customize) {
 
     // добавление раздела 'Information about site' в Customizer
     $wp_customize->add_section('ztheme_site_data', array(
-        'title' => 'Information about site',
+        'title' => 'Site Information',
         'priority' => 10, // расположение раздела в Customizer
     ));
     $wp_customize->add_setting('ztheme_phone', array(
@@ -141,7 +141,7 @@ function ztheme_customize_register($wp_customize) {
     $wp_customize->add_control(
         'ztheme_show_phone',
         array(
-            'label' => 'Показывать телефон',
+            'label' => 'Show phone',
             'section' => 'ztheme_site_data',
             'type' => 'checkbox',
         )

@@ -31,7 +31,7 @@
                             <div class="card-footer">
                                 <!-- см. get_permalink() -->
                                 <!-- замена языка. Go somewhere на англ. языке по умолчанию меняем на русский - Читать далее -->
-                                <a href="<?php the_permalink(); ?>" class="btn btn-primary"><?php _e('Читать далее', 'ztheme') ?></a>
+                                <a href="<?php the_permalink(); ?>" class="btn btn-primary"><?php _e('Read more', 'ztheme') ?></a>
                             </div>
                         </div>
                     </div>
