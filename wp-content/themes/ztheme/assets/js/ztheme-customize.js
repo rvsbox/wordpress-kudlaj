@@ -12,4 +12,10 @@
         });
     });
 
+    wp.customize( 'ztheme_show_phone', function( value ) {
+        value.bind( function( newval ) {
+            false === newval ? $('.ztheme-phone').fadeOut() : $('.ztheme-phone').fadeIn();
+        } );
+    } );
+
 })(jQuery);

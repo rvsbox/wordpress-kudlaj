@@ -46,7 +46,7 @@
         ));
         ?>
 
-        <p class="ztheme-phone">
+        <p class="ztheme-phone"<?php if (false === get_theme_mod('ztheme_show_phone')) echo ' style="display: none;"' ?>>
             Phone: <span><?php echo get_theme_mod('ztheme_phone'); ?></span>
         </p>
     </div>

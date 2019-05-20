@@ -112,9 +112,9 @@ function ztheme_customize_register($wp_customize) {
         )
     );
 
-    // добавление разделов в Customizer
+    // добавление раздела 'Information about site' в Customizer
     $wp_customize->add_section('ztheme_site_data', array(
-        'title' => 'Информация сайта',
+        'title' => 'Information about site',
         'priority' => 10, // расположение раздела в Customizer
     ));
     $wp_customize->add_setting('ztheme_phone', array(
@@ -125,9 +125,23 @@ function ztheme_customize_register($wp_customize) {
     $wp_customize->add_control(
         'ztheme_phone',
         array(
-            'label' => 'Телефон',
+            'label' => 'Phone',
             'section' => 'ztheme_site_data',
             'type' => 'text',
+        )
+    );
+
+    // добавление опции в раздел 'Information about site'
+    $wp_customize->add_setting('ztheme_show_phone', array(
+        'default' => true,
+        'transport' => 'postMessage',
+    ));
+    $wp_customize->add_control(
+        'ztheme_show_phone',
+        array(
+            'label' => 'Показывать телефон',
+            'section' => 'ztheme_site_data',
+            'type' => 'checkbox',
         )
     );
 }
