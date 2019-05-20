@@ -28,6 +28,8 @@ add_action('wp_enqueue_scripts', 'ztheme_scripts');
 // ======================================================================
 
 function ztheme_setup() {
+    // функция для замены языка
+    load_theme_textdomain('ztheme', get_template_directory() . '/languages');
     add_theme_support('post-thumbnails');
     // в Customize появится раздел Site Identity для добавления логотипа
     add_theme_support('custom-logo', array(
