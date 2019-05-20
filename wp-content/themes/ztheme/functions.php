@@ -20,6 +20,7 @@ function ztheme_scripts() {
     wp_enqueue_script('ztheme-popper', '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', array('jquery'), false, true); // jquery - установка зависимости
     wp_enqueue_script('ztheme-bootstrapjs', get_template_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js', array('jquery'), false, true);
 }
+
 add_action('wp_enqueue_scripts', 'ztheme_scripts');
 
 
@@ -50,6 +51,7 @@ function ztheme_setup() {
         'footer_menu2' => 'Меню в футере 2',
     ));
 }
+
 add_action('after_setup_theme', 'ztheme_setup');
 
 
@@ -83,6 +85,7 @@ function ztheme_widgets_init() {
         //'after_widget' => "</div>\n", // продолжение, закрывающий тег
     ));
 }
+
 add_action('widgets_init', 'ztheme_widgets_init');
 
 
@@ -106,6 +109,25 @@ function ztheme_customize_register($wp_customize) {
                 'section' => 'colors',
                 'setting' => 'ztheme_link_color',
             )
+        )
+    );
+
+    // добавление разделов в Customizer
+    $wp_customize->add_section('ztheme_site_data', array(
+        'title' => 'Информация сайта',
+        'priority' => 10,
+    ));
+    $wp_customize->add_setting('ztheme_phone', array(
+        'default' => '',
+        'transport' => 'postMessage',
+    ));
+    // добавление элемента управления
+    $wp_customize->add_control(
+        'ztheme_phone',
+        array(
+            'label' => 'Телефон',
+            'section' => 'ztheme_site_data',
+            'type' => 'text',
         )
     );
 }
@@ -138,7 +160,8 @@ add_action('wp_head', 'ztheme_customize_css');
 // подключение скрипта ztheme-customize.js через хук WP
 // ======================================================================
 
-function ztheme_customize_js(){
-    wp_enqueue_script('ztheme-customizer', get_template_directory_uri() . '/assets/js/ztheme-customize.js', array( 'jquery','customize-preview' ),	'', true);
+function ztheme_customize_js() {
+    wp_enqueue_script('ztheme-customizer', get_template_directory_uri() . '/assets/js/ztheme-customize.js', array('jquery', 'customize-preview'), '', true);
 }
+
 add_action('customize_preview_init', 'ztheme_customize_js');
