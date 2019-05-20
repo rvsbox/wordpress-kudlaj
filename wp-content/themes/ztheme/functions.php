@@ -2,8 +2,8 @@
 
 require_once 'Ztheme_Menu.php';
 
-function debug($data){
-    echo '<pre>'.print_r($data, 1).'</pre>';
+function debug($data) {
+    echo '<pre>' . print_r($data, 1) . '</pre>';
 }
 
 
@@ -20,7 +20,6 @@ function ztheme_scripts() {
     wp_enqueue_script('ztheme-popper', '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', array('jquery'), false, true); // jquery - установка зависимости
     wp_enqueue_script('ztheme-bootstrapjs', get_template_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js', array('jquery'), false, true);
 }
-
 add_action('wp_enqueue_scripts', 'ztheme_scripts');
 
 
@@ -51,7 +50,6 @@ function ztheme_setup() {
         'footer_menu2' => 'Меню в футере 2',
     ));
 }
-
 add_action('after_setup_theme', 'ztheme_setup');
 
 
@@ -77,60 +75,70 @@ the_posts_pagination(array(
 // ======================================================================
 
 function ztheme_widgets_init() {
-    register_sidebar( array(
-       'name' => 'Сайдбар справа',
+    register_sidebar(array(
+        'name' => 'Сайдбар справа',
         'id' => 'right-sidebar',
         'description' => 'Область для виджетов в сайдбаре справа',
         //'before_widget' => '<div id="%1$s" class="widget %2$s">', // замена li, который по умолчанию, на div
         //'after_widget' => "</div>\n", // продолжение, закрывающий тег
     ));
 }
-
 add_action('widgets_init', 'ztheme_widgets_init');
 
 
 // Customizer. Настройка установки цвета для ссылок
 // ======================================================================
 
-function ztheme_customize_register($wp_customize){
+function ztheme_customize_register($wp_customize) {
     // добавление настройки
-    $wp_customize->add_setting('test_link_color', array(
+    $wp_customize->add_setting('ztheme_link_color', array(
         'default' => '#007bff',
         'sanitize_callback' => 'sanitize_hex_color',
+        'transport' => 'postMessage',
     ));
     // элемент управления
     $wp_customize->add_control(
         new WP_Customize_Color_Control(
             $wp_customize,
-            'test_link_color',
+            'ztheme_link_color',
             array(
                 'label' => 'Цвет ссылок',
                 'section' => 'colors',
-                'setting' => 'test_link_color',
+                'setting' => 'ztheme_link_color',
             )
         )
     );
 }
-
 add_action('customize_register', 'ztheme_customize_register');
 
 
 // для того чтобы настройки применились в Customizer
 // ======================================================================
 
-function test_customize_css(){
-$test_link_color = get_theme_mod('test_link_color');
+function ztheme_customize_css(){
+$ztheme_link_color = get_theme_mod('ztheme_link_color');
 echo <<<HEREDOC
 <style type="text/css">
-a { color: $test_link_color; }
+a { color: $ztheme_link_color; }
 </style>
 HEREDOC;
 
-/**/?><!--
+// альтернатива для HEREDOC
+/**/
+?><!--
     <style type="text/css">
-        a { color: <?php /*echo get_theme_mod('test_link_color'); */?>; }
+        a { color: <?php /*echo get_theme_mod('ztheme_link_color'); */
+?>; }
     </style>
     --><?php
 }
+add_action('wp_head', 'ztheme_customize_css');
 
-add_action('wp_head', 'test_customize_css');
+
+// подключение скрипта ztheme-customize.js через хук WP
+// ======================================================================
+
+function ztheme_customize_js(){
+    wp_enqueue_script('ztheme-customizer', get_template_directory_uri() . '/assets/js/ztheme-customize.js', array( 'jquery','customize-preview' ),	'', true);
+}
+add_action('customize_preview_init', 'ztheme_customize_js');
