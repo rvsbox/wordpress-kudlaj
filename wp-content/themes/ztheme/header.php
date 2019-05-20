@@ -33,17 +33,23 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <?php
-    wp_nav_menu(array(
-        'theme_location' => 'header_menu1',
-        //'menu' => 'Меню в футере',
-        //'container' => 'div',
-        'container_class' => 'collapse navbar-collapse',
-        'menu_class' => 'navbar-nav mr-auto',
-        'container_id' => 'navbarSupportedContent',
-        'walker' => new Ztheme_Menu,
-    ));
-    ?>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <?php
+        wp_nav_menu(array(
+            'theme_location' => 'header_menu1',
+            //'menu' => 'Меню в футере',
+            //'container' => 'div',
+            'container' => '',
+            'menu_class' => 'navbar-nav mr-auto',
+            'container_id' => 'navbarSupportedContent',
+            'walker' => new Ztheme_Menu,
+        ));
+        ?>
+
+        <p class="ztheme-phone">
+            Phone: <span><?php echo get_theme_mod('ztheme_phone'); ?></span>
+        </p>
+    </div>
 
     <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">

@@ -115,7 +115,7 @@ function ztheme_customize_register($wp_customize) {
     // добавление разделов в Customizer
     $wp_customize->add_section('ztheme_site_data', array(
         'title' => 'Информация сайта',
-        'priority' => 10,
+        'priority' => 10, // расположение раздела в Customizer
     ));
     $wp_customize->add_setting('ztheme_phone', array(
         'default' => '',

@@ -6,4 +6,10 @@
         });
     });
 
+    wp.customize('ztheme_phone', function (value) {
+        value.bind(function (newval) {
+            $('.ztheme-phone span').text(newval);
+        });
+    });
+
 })(jQuery);
