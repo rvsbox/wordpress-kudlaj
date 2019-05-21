@@ -62,8 +62,12 @@
 <?php
 //$query = new WP_Query('cat=21,31&posts_per_page=-1');
 $query = new WP_Query(array(
-    'cat' => '21, 31',
+    // 'cat' => '21, 31',
+    // сортировка постов
+    'category_name' => 'edge-case-2, markup', // сортировка по slug
     'posts_per_page' => -1,
+    'orderby' => 'title', // сортировка по заголовку
+    'order' => 'ASC', // ASC - алфавитный порядок, DESC - обратный порядок
 ));
 ?>
 
