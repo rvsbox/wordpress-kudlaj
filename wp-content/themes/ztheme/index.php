@@ -80,6 +80,8 @@ $query = new WP_Query(array(
 <?php else: ?>
     <!-- no posts found -->
 <?php endif; ?>
+
+<!-- wp_reset_postdata() всегда применяется от багов при произвольной выборке  -->
 <?php wp_reset_postdata(); ?>
 
 <?php get_footer(); ?>
