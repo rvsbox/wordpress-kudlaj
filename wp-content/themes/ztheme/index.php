@@ -58,8 +58,8 @@
     </div>
 </div>
 
-<!-- тест -->
-<?php $query = new WP_Query('cat=21'); ?>
+<!-- вывод постов из категории, 3 - количество постов, -1 - все посты -->
+<?php $query = new WP_Query('cat=21&posts_per_page=3'); ?>
 
 <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
     <!-- post -->
