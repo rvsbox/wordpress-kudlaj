@@ -59,7 +59,7 @@
 </div>
 
 <!-- вывод постов из категории, 3 - количество постов, -1 - все посты -->
-<?php $query = new WP_Query('cat=21&posts_per_page=3'); ?>
+<?php $query = new WP_Query('cat=21,31&posts_per_page=-1'); ?>
 
 <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
     <!-- post -->
@@ -70,6 +70,5 @@
     <!-- no posts found -->
 <?php endif; ?>
 <?php wp_reset_postdata(); ?>
-
 
 <?php get_footer(); ?>
