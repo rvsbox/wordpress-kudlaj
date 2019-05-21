@@ -31,7 +31,8 @@
                             <div class="card-footer">
                                 <!-- см. get_permalink() -->
                                 <!-- замена языка. Go somewhere на англ. языке по умолчанию меняем на русский - Читать далее -->
-                                <a href="<?php the_permalink(); ?>" class="btn btn-primary"><?php _e('Read more', 'ztheme') ?></a>
+                                <a href="<?php the_permalink(); ?>"
+                                   class="btn btn-primary"><?php _e('Read more', 'ztheme') ?></a>
                             </div>
                         </div>
                     </div>
@@ -46,7 +47,7 @@
                     )); ?>
                 <?php else: ?>
                     <!-- no posts found -->
-                    <p><?php __('No posts' , 'ztheme') ?></p>
+                    <p><?php __('No posts', 'ztheme') ?></p>
                 <?php endif; ?>
 
             </div>
@@ -56,5 +57,19 @@
 
     </div>
 </div>
+
+<!-- тест -->
+<?php $query = new WP_Query('cat=21'); ?>
+
+<?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
+    <!-- post -->
+    <h3><?php the_title(); ?></h3>
+<?php endwhile; ?>
+    <!-- post navigation -->
+<?php else: ?>
+    <!-- no posts found -->
+<?php endif; ?>
+<?php wp_reset_postdata(); ?>
+
 
 <?php get_footer(); ?>
