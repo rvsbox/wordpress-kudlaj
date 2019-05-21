@@ -1,0 +1,57 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ztheme\n"
+"POT-Creation-Date: 2019-05-21 19:53+0200\n"
+"PO-Revision-Date: 2019-05-21 19:54+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.7\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-KeywordsList: __;_e;esc_html__;esc_html_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: functions.php:52
+msgid "Header menu 1"
+msgstr "Меню в шапке 1"
+
+#: functions.php:53
+msgid "Footer menu 2"
+msgstr "Меню в футере 2"
+
+#: functions.php:83
+msgid "Right Sidebar"
+msgstr "Сайдбар справа"
+
+#: functions.php:85
+msgid "Area for widgets in the right sidebar"
+msgstr "Область для виджетов в сайдбаре справа"
+
+#: functions.php:110
+msgid "Link Color"
+msgstr "Цвет ссылок"
+
+#: functions.php:119
+msgid "Site Information"
+msgstr "Информация сайта"
+
+#: functions.php:130
+msgid "Phone"
+msgstr "Телефон"
+
+#: functions.php:144
+msgid "Show phone"
+msgstr "Показывать телефон"
+
+#: index.php:34
+msgid "Read more"
+msgstr "Читать далее"
+
+#: index.php:49
+msgid "No posts"
+msgstr "Нет постов"

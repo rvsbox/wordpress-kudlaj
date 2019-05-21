@@ -46,7 +46,7 @@
                     )); ?>
                 <?php else: ?>
                     <!-- no posts found -->
-                    <p>Постов нет...</p>
+                    <p><?php __('No posts' , 'ztheme') ?></p>
                 <?php endif; ?>
 
             </div>
