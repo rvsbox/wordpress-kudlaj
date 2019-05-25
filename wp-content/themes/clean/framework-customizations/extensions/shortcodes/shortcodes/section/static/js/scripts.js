@@ -3,5 +3,5 @@
  * @see background.init.js
  */
 jQuery(document).ready(function($) {
-	$('.background-video').wallpaper();
+    $('.background-video').wallpaper();
 });

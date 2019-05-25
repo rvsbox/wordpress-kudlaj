@@ -7,5 +7,5 @@
  * it remains for backward compatibility.
  */
 jQuery(document).ready(function($) {
-	$('.background-video').background();
+    $('.background-video').background();
 });
