@@ -3,7 +3,7 @@
     <div id="fh5co-portfolio">
 
         <?php $query = new WP_Query(array(
-            'category_name' => 'home',
+            'category_name' => get_theme_mod('clean_theme_options'),
         )); ?>
 
         <?php if ($query->have_posts()) : $i = 1;
