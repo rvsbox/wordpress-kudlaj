@@ -6,6 +6,7 @@
 
         <?php $query = new WP_Query(array(
             'category_name' => get_theme_mod('clean_home_category'),
+            'posts_per_page' => 4,
         )); ?>
 
         <?php if ($query->have_posts()) : $i = 1;
