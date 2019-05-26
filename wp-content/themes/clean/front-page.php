@@ -36,6 +36,7 @@
         <?php wp_reset_postdata(); ?>
 
     </div>
+    <div class="clearfix"></div>
 <?php endif; ?>
 
     <!-- вывод остального контента основной страницы -->
