@@ -11,5 +11,11 @@ $options = array(
         'type'  => 'text',
         'label' => __( 'Title', 'fw' ),
         'desc'  => __( 'Icon title', 'fw' ),
-    )
+    ),
+
+    // custom
+    'url' => array(
+    'label' => __('Url', 'clean'),
+    'type'  => 'text',
+),
 );
