@@ -7,6 +7,8 @@
  * @package law
  */
 
+require_once get_template_directory() . '/Law_Header_Menu.php';
+
 if ( ! function_exists( 'law_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -44,7 +46,8 @@ if ( ! function_exists( 'law_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'law' ),
+			'header-menu' => esc_html__( 'Header Menu', 'law' ),
+			'footer-menu' => esc_html__( 'Footer Menu', 'law' ),
 		) );
 
 		/*
