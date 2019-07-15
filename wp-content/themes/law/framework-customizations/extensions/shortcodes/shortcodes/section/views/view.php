@@ -30,8 +30,8 @@ $container_class = ( isset( $atts['is_fullwidth'] ) && $atts['is_fullwidth'] ) ?
 $custom_id = ( isset( $atts['custom_id'] ) && $atts['custom_id'] ) ? $atts['custom_id'] : '';
 $section_extra_classes .= ( isset( $atts['custom_class'] ) && $atts['custom_class'] ) ? $atts['custom_class'] : '';
 ?>
-<section id="<?php echo esc_attr($atts['custom_id']); ?>" class="fw-main-row <?php echo esc_attr($section_extra_classes) ?>" <?php echo $section_style; ?> <?php echo $bg_video_data_attr; ?>>
-	<div class="<?php echo esc_attr($container_class); ?>">
-		<?php echo do_shortcode( $content ); ?>
-	</div>
+<section <?php if(( isset( $atts['custom_id'] ) && $atts['custom_id'] )) echo "id='{$atts['custom_id']}'" ?> class="fw-main-row <?php echo esc_attr($section_extra_classes) ?>" <?php echo $section_style; ?> <?php echo $bg_video_data_attr; ?>>
+    <div class="<?php echo esc_attr($container_class); ?>">
+        <?php echo do_shortcode( $content ); ?>
+    </div>
 </section>
