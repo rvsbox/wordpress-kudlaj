@@ -2,3 +2,22 @@
 #fh5co-content > .fw-container-fluid{
     padding: 0;
 }
+#fh5co-content .choose{
+    padding: 15px 40px 0;
+}
+#fh5co-content .fh5co-heading{
+    margin-bottom: 0;
+}
+.fh5co-heading h2{
+    margin-bottom: 15px;
+}
+.fh5co-heading span {
+    display: block;
+    margin-bottom: 5px;
+    text-transform: none;
+    font-size: 12px;
+    letter-spacing: 0;
+}
+.progress{
+    margin-bottom: 15px;
+}
