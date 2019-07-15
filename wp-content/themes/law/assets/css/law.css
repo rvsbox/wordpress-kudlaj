@@ -1,3 +1,4 @@
-#home-slider >  .fw-container-fluid {
+#home-slider > .fw-container-fluid,
+#fh5co-content > .fw-container-fluid{
     padding: 0;
 }
