@@ -84,3 +84,12 @@
     font-weight: 400;
     font-size: 16px;
 }
+
+.fw_form_fw_form .field-text input:active,
+.fw_form_fw_form .field-text input:focus,
+.fw_form_fw_form .field-textarea textarea:active,
+.fw_form_fw_form .field-textarea textarea:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: #F95959;
+}
