@@ -108,13 +108,13 @@ add_action( 'after_setup_theme', 'law_content_width', 0 );
  */
 function law_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'law' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'law' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+        'name'          => esc_html__( 'Footer', 'law' ),
+        'id'            => 'footer',
+        'description'   => esc_html__( 'Add widgets here.', 'law' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s col-md-3">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h4 class="widget-title">',
+        'after_title'   => '</h4>',
 	) );
 }
 add_action( 'widgets_init', 'law_widgets_init' );
